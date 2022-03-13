@@ -18,11 +18,11 @@ const imgSRC = computed(()=>{
 
 <template>
     <div class="pokemon-container">
-        <img :src="imgSRC"
+        <img v-if="!showPokemon" :src="imgSRC"
             class="hidden-pokemon"
             alt="pokemon">
 
-        <img v-if="showPokemon" 
+        <img v-else="showPokemon" 
             :src="imgSRC"
             class="fade-in"
             alt="pokemon">
@@ -37,8 +37,8 @@ const imgSRC = computed(()=>{
     }
     img {
         height: 200px;
-        position: absolute;
-        left: calc(50% - 100px);
+        /*position: absolute;*/
+        /*left: calc(50% - 100px);*/
         user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
